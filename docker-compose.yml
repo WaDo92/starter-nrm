@@ -28,7 +28,7 @@ services:
         restart: always
         container_name: mongodb
         volumes:
-            - ./api/data-node:/data/db
+            - ./api/data_node:/data/db
         ports:
             - 27017:27017
         command: mongod --noauth
