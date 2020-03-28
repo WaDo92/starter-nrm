@@ -5,12 +5,14 @@ WORKDIR /api
 COPY package*.json /api/
 # install dependencies
 RUN npm install -g npm@latest
+RUN npm install -g nodemon
 RUN npm cache verify
 RUN npm i mongoose
+
 RUN npm i 
 # Copy the current directory contents into the container at /api
 COPY . /api/
 # Make port 80 available to the world outside this container
 EXPOSE 80
 # Run the app when the container launches
-CMD ["npm", "start"]
+CMD [ "nodemon" ]
